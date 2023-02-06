@@ -1,0 +1,5 @@
+analyzer\AnalyzerTest.class
+shipment\ShipmentFinisherTest.class
+user\UserDaoTest.class
+payment\PaymentGenerateTest.class
+shipment\ShipmentDaoFalseTest.class

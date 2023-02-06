@@ -1,10 +1,10 @@
 package analyzer;
 
-import org.com.shipment.CreatorShipment;
-import org.com.shipment.Shipment;
-import org.com.shipment.analyzer.Analyzer;
-import org.com.shipment.order.Order;
-import org.com.shipment.product.Product;
+import org.com.shipment.service.CreatorShipment;
+import org.com.shipment.model.Shipment;
+import org.com.shipment.model.Analyzer;
+import org.com.shipment.model.Order;
+import org.com.shipment.model.Product;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

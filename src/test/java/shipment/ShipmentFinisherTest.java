@@ -1,6 +1,10 @@
 package shipment;
 
 import org.com.shipment.*;
+import org.com.shipment.model.Shipment;
+import org.com.shipment.service.CreatorShipment;
+import org.com.shipment.service.ShipmentDaoFalse;
+import org.com.shipment.service.ShipmentFinisher;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

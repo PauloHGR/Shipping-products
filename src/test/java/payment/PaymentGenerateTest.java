@@ -1,13 +1,13 @@
 package payment;
 
-import org.com.shipment.CreatorShipment;
-import org.com.shipment.Shipment;
-import org.com.shipment.ShipmentDaoFalse;
-import org.com.shipment.analyzer.Analyzer;
-import org.com.shipment.payment.Payment;
-import org.com.shipment.payment.PaymentGenerate;
+import org.com.shipment.service.CreatorShipment;
+import org.com.shipment.model.Shipment;
+import org.com.shipment.service.ShipmentDaoFalse;
+import org.com.shipment.model.Analyzer;
+import org.com.shipment.model.Payment;
+import org.com.shipment.service.PaymentGenerate;
 import org.com.shipment.payment.RepositoryPayment;
-import org.com.shipment.product.Product;
+import org.com.shipment.model.Product;
 import org.com.shipment.watch.Watch;
 import org.junit.Assert;
 import org.junit.Before;
