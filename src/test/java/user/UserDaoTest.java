@@ -14,6 +14,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
+
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 
@@ -65,5 +67,27 @@ public class UserDaoTest {
         Users userInDB = userDAO.findByNameAndEmail("Paulo Rocha", "pr@gmail.com.br");
 
         Assert.assertNull(userInDB);
+    }
+
+    @Test
+    public void getUsers(){
+        Users user1 = new Users("Paulo Rocha", "pr@gmail.com.br");
+        Users user2 = new Users("Patricia Rocha", "patr@gmail.com.br");
+
+        userDAO.save(user1);
+        userDAO.save(user2);
+
+        List<Users> usersList = userDAO.getUsers();
+
+        Assert.assertEquals(usersList.size(),2);
+        Assert.assertEquals(usersList.get(0).getName(),"Paulo Rocha");
+        Assert.assertEquals(usersList.get(1).getName(),"Patricia Rocha");
+    }
+
+    @Test
+    public void getUsersEmpty(){
+        List<Users> usersList = userDAO.getUsers();
+
+        Assert.assertEquals(usersList.size(),0);
     }
 }

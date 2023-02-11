@@ -7,6 +7,9 @@ import org.springframework.stereotype.Service;
 
 import jakarta.persistence.EntityManager;
 
+import java.util.List;
+
+
 
 public class UserDAO{
 
@@ -62,11 +65,12 @@ public class UserDAO{
         session.getTransaction().commit();
     }
 
-   /* public List<Users> findAll() {
+    public List<Users> getUsers() {
+
         try {
 
             session.getTransaction().begin();
-            Query q = (Query) session.createQuery("Select * from Users u");
+            Query q = (Query) session.createQuery("Select u from Users u");
 
             List<Users> users = q.list();
             session.getTransaction().commit();
@@ -80,5 +84,5 @@ public class UserDAO{
             e.printStackTrace();
             return null;
         }
-    }*/
+    }
 }
