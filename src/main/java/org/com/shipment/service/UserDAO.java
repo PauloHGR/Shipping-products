@@ -2,7 +2,9 @@ package org.com.shipment.service;
 
 import org.com.shipment.model.Users;
 import org.hibernate.HibernateException;
+import org.hibernate.Session;
 import org.hibernate.query.Query;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import jakarta.persistence.EntityManager;
@@ -10,11 +12,13 @@ import jakarta.persistence.EntityManager;
 import java.util.List;
 
 
-
+@Service
 public class UserDAO{
 
 
-    private final EntityManager session;
+    //private final EntityManager session;
+    @Autowired
+    private EntityManager session;
 
     public UserDAO(EntityManager session){
         this.session = session;
