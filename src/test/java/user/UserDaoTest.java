@@ -90,4 +90,13 @@ public class UserDaoTest {
 
         Assert.assertEquals(usersList.size(),0);
     }
+
+    @Test
+    public void getUserById(){
+        Users user1 = new Users("Paulo Rocha", "pr@gmail.com.br");
+        userDAO.save(user1);
+        Users userInDB = userDAO.findById(user1.getId());
+
+        Assert.assertEquals(userInDB.getId(),user1.getId());
+    }
 }

@@ -19,14 +19,24 @@ public class UserController {
         return userDAO.getUsers();
     }
 
-    @GetMapping("{name}/{email}")
-    public Users getUserByNameAndEmail(@PathVariable String name, @PathVariable String email){
+    @GetMapping("/find")
+    public Users getUserByNameAndEmail(@RequestParam("name") String name, @RequestParam("email") String email){
         return userDAO.findByNameAndEmail(name,email);
+    }
+
+    @GetMapping("{id}")
+    public Users getUserByNameAndEmail(@PathVariable Long id){
+        return userDAO.findById(id);
     }
 
     @PostMapping
     public void saveUser(@RequestBody Users user){
         userDAO.save(user);
-        System.out.println("Salvo!!");
+    }
+
+    @DeleteMapping("{id}")
+    public void deleteUser(@PathVariable Long id){
+        Users user = userDAO.findById(id);
+        userDAO.delete(user);
     }
 }

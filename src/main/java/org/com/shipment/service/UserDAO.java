@@ -89,4 +89,27 @@ public class UserDAO{
             return null;
         }
     }
+
+    public Users findById(Long id) {
+
+        try {
+            //Session session = factory.openSession();
+
+            session.getTransaction().begin();
+            Query q = (Query) session.createQuery("from Users u where u.id = :id")
+                    .setParameter("id",id);
+
+            Users user = (Users) q.uniqueResult();
+            session.getTransaction().commit();
+            return user;
+        } catch (HibernateException e) {
+            throw new RuntimeException(e);
+        } catch (Exception e){
+            if (session.getTransaction() != null){
+                session.getTransaction().rollback();
+            }
+            e.printStackTrace();
+            return null;
+        }
+    }
 }
